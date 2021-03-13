@@ -1,12 +1,12 @@
 {
   "name": "express-on-typescript",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "My first express server written in TypeScript",
   "main": "dist/app.js",
   "types": "dist/app.d.ts",
   "files": [
     "dist"
-],
+  ],
   "scripts": {
     "prepublishOnly": "tsc",
     "test": "test",
