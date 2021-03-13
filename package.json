@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "null"
+    "url": "https://github.com/OrenVilderman/express-on-typescript.git"
   },
   "author": "Oren Vilderman",
   "license": "ISC",
