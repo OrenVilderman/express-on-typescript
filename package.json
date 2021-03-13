@@ -1,6 +1,6 @@
 {
   "name": "express-on-typescript",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "My first express server written in TypeScript",
   "main": "dist/app.ts",
   "types": "dist/app.d.ts",
