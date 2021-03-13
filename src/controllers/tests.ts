@@ -69,7 +69,7 @@ export const deleteTest = (req: Request, res: Response) => {
     const testToRemove = tests.filter((test) => test.UUID == uuid)
     if (Array.isArray(testToRemove) && testToRemove.length > 0) {
         //tests = tests.filter((test) => test.UUID != uuid);
-        fs.writeFile("src/db/tests.json", JSON.stringify(tests.filter((test) => test.UUID != uuid)), function (err) {
+        fs.writeFile("dist/db/tests.json", JSON.stringify(tests.filter((test) => test.UUID != uuid)), function (err) {
             if (err) throw err;
             console.log('complete');
         }
@@ -83,7 +83,7 @@ export const deleteTest = (req: Request, res: Response) => {
 
 export const resetDB = (req: Request, res: Response) => {
     res.status(201).send("Server Restarting...");
-    fs.writeFile("src/db/tests.json", fs.readFileSync('src/db/tests_backup.json').toString(), function (err) {
+    fs.writeFile("dist/db/tests.json", fs.readFileSync('dist/db/tests_backup.json').toString(), function (err) {
         if (err) throw err;
         console.log('complete');
     });
