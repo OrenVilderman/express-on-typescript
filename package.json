@@ -2,8 +2,10 @@
   "name": "express-on-typescript",
   "version": "0.0.2",
   "description": "My first express server written in TypeScript",
-  "main": "src/app.ts",
+  "main": "dist/app.ts",
+  "types": "dist/app.d.ts",
   "scripts": {
+    "prepublishOnly": "tsc",
     "test": "test",
     "start": "set PORT=8000 && node dist/app.js",
     "dev": "set PORT=8000 && nodemon src/app.ts",
