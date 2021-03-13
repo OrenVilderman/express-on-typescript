@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "prepublishOnly": "tsc && copy src/db/tests_backup.json dist/db",
+    "prepublishOnly": "tsc && @powershell copy src/db/tests_backup.json dist/db",
     "test": "test",
     "start": "set PORT=8000 && node dist/app.js",
     "dev": "set PORT=8000 && nodemon src/app.ts",
