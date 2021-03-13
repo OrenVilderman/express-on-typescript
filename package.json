@@ -4,6 +4,9 @@
   "description": "My first express server written in TypeScript",
   "main": "dist/app.js",
   "types": "dist/app.d.ts",
+  "files": [
+    "dist"
+],
   "scripts": {
     "prepublishOnly": "tsc",
     "test": "test",
