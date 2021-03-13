@@ -2,7 +2,7 @@
   "name": "express-on-typescript",
   "version": "0.0.3",
   "description": "My first express server written in TypeScript",
-  "main": "dist/app.ts",
+  "main": "dist/app.js",
   "types": "dist/app.d.ts",
   "scripts": {
     "prepublishOnly": "tsc",
