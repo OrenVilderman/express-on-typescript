@@ -1,6 +1,6 @@
 {
   "name": "express-on-typescript",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is an example of express server written in TypeScript",
   "main": "./dist/app.js",
   "types": "./dist/app.d.ts",
@@ -13,7 +13,6 @@
     "start": "nodemon app.ts",
     "main": "tsc && node ./dist/app.js",
     "dev": "nodemon ./src/app.ts"
-
   },
   "author": "Oren Vilderman",
   "license": "ISC",
