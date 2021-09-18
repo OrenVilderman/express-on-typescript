@@ -1,5 +1,5 @@
 # Express On TypeScript - Created by Oren Vilderman  
-as infrastructure for similar project
+as infrastructure for similar projects...
 * Express, TypeScript, Mocha, Mochawesome
 
 
