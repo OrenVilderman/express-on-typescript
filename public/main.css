@@ -8,6 +8,10 @@ input, label {
     padding: 0.5em;
 }
 
+section {
+    display: inline-table;
+}
+
 form {
     float: left;
     width: 18em;

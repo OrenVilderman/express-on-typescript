@@ -44,3 +44,18 @@ export const update = (req: Request, res: Response) => {
         res.status(404).send(`Data with UUID of: ${uuid}, not found!`);
     }
 }
+
+export const remove = (req: Request, res: Response) => {
+    const { uuid } = req.params;
+    const dataToUpdate = dataArr.find((data) => data.uuid == uuid)
+    if (typeof dataToUpdate === 'object' && dataToUpdate != null) {
+        for (let index = 0; index < dataArr.length; index++) {
+            if (dataArr[index].uuid == uuid) {
+                dataArr.splice(index, 1);
+                res.send(dataToUpdate);
+            }
+        }
+    } else {
+        res.status(404).send(`Data with UUID of: ${uuid}, not found!`);
+    }
+}

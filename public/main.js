@@ -36,11 +36,23 @@ async function setPatch() {
     }).then(async (res) => addResponseToNode(await res.text()));
 }
 
+async function setDelete() {
+    const uuid = document.getElementById('deleteUUID').value;
+    await fetch(`/api/V0.1/${uuid}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(async (res) => addResponseToNode(await res.text()));
+}
+
 function addResponseToNode(response) {
     let el;
     try {
         response = JSON.parse(response)
-        response = response[response.length > 1 ? response.length - 1 : 0]
+        if (!response.uuid) {
+            response = response[response.length > 1 ? response.length - 1 : 0]
+        }
         el = document.getElementById('results');
     } catch (error) {
         response = `Error: ${error.toString()}`;

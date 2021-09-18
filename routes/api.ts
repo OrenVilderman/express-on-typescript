@@ -1,5 +1,5 @@
 import express, { Router, Request, Response } from "express"
-import { getByUUID, getByName, post, update } from "../controllers/api"
+import { getByUUID, getByName, post, update, remove } from "../controllers/api"
 
 const apiRouter: Router = express.Router();
 
@@ -10,6 +10,8 @@ apiRouter.get('/', getByName);
 apiRouter.post('/', post);
 
 apiRouter.patch('/:uuid', update);
+
+apiRouter.delete('/:uuid', remove);
 
 apiRouter.all('*', (request: Request, response: Response) => {
     console.log(request.url);
