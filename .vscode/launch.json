@@ -5,25 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            // "command": "cd ts-express",
+            "name": "Listen To NPM Scripts",
             "request": "launch",
-            "name": "Launch TypeScript Server",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "preLaunchTask": {
-                "label": "Build The Server",
-                "type": "typescript",
-                "tsconfig": "tsconfig.json",
-                "option": "watch",
-                "problemMatcher": [
-                    "$tsc-watch"
-                ],
-                "group": "build"
-            },
-            "program": "${workspaceFolder}/src/app.js",
-            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
-            "restart": true,
+            "type":"node-terminal"
         },
     ]
 }
