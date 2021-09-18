@@ -1,5 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from "express"
 import testsRouter from "./routes/tests"
+import apiTestsRouter from "./routes/api-tests"
 
 const server: Application = express();
 const PORT: number = Number(process.env.PORT) || 8000;
@@ -7,6 +8,8 @@ const PORT: number = Number(process.env.PORT) || 8000;
 server.use(express.json());
 
 server.use('/tests', testsRouter)
+
+server.use('/api/tests', apiTestsRouter)
 
 server.get('/', (req: Request, res: Response) => {
     res.status(404).send()

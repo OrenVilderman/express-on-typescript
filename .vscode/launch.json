@@ -21,9 +21,9 @@
                 ],
                 "group": "build"
             },
-            "program": "${workspaceFolder}/dist/app.js",
+            "program": "${workspaceFolder}/src/app.js",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
             "restart": true,
-        }
+        },
     ]
 }
