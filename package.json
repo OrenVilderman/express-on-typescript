@@ -4,14 +4,16 @@
   "description": "This is an example of express server written in TypeScript",
   "main": "./dist/app.js",
   "types": "./dist/app.d.ts",
-  "files":[
+  "files": [
     "dist/**"
   ],
   "scripts": {
     "prepack": "tsc && @powershell New-Item dist/public -ItemType Directory -Force && @powershell Copy-Item src/public/* dist/public -Verbose",
     "test1": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.ts",
-    "main": "tsc && node ./dist/app.js"
+    "main": "tsc && node ./dist/app.js",
+    "dev": "nodemon ./src/app.ts"
+
   },
   "author": "Oren Vilderman",
   "license": "ISC",
