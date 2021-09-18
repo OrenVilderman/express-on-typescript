@@ -62,6 +62,8 @@
 
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
-    "resolveJsonModule": true, //Added by Oren Vilderman to support the db/*.json
+    
+    /* Add Options by Oren Vilderman */
+    "resolveJsonModule": true, //support the db/*.json
   }
 }
