@@ -1,13 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="job_employment.ico"/>
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="job_employment.ico" />
+    <title>TS-Express</title>
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <h1>TS Express Public UI</h1>
+    <form id="getAction" action="/api/V0.1/" method="GET">
+        <h2>GET</h2>
+        <div>
+            <label for="getBy">Send GET Empty or by UUID request</label>
+            <input name="getBy" id="getBy" value="" placeholder="Enter UUID here">
+        </div>
+        <button onclick="setUUID();">Send GET</button>
+        </div>
+    </form>
+
+    <form id="POSTAction">
+        <h2>POST</h2>
+        <div>
+            <label for="postID">Set the POST request ID</label>
+            <input name="postID" id="postID" value="" placeholder="Enter ID here">
+        </div>
+        <div>
+            <label for="postName">Set the POST request Name</label>
+            <input name="postName" id="postName" value="" placeholder="Enter Name here">
+        </div>
+        <div>
+            <label for="postUUID">Set the POST request UUID</label>
+            <input name="postUUID" id="postUUID" value="" placeholder="Enter UUID here">
+        </div>
+        <input type='button' onclick="setPOST();" value="Send POST"></input>
+        </div>
+    </form>
+
+    <form id="PatchAction">
+        <h2>PATCH</h2>
+        <div>
+            <label for="patchID">Set the PATCH request ID</label>
+            <input name="patchID" id="patchID" value="" placeholder="Enter ID here">
+        </div>
+        <div>
+            <label for="patchName">Set the PATCH request Name</label>
+            <input name="patchName" id="patchName" value="" placeholder="Enter Name here">
+        </div>
+        <div>
+            <label for="patchUUID">Set the PATCH request UUID</label>
+            <input name="patchUUID" id="patchUUID" value="" placeholder="Enter UUID here">
+        </div>
+        
+        <input type='button' onclick="setPatch();" value="Send PATCH"></input>
+        </div>
+    </form>
+    <script rel="scriptSheet" src="main.js" type="application/javaScript"></script>
 </body>
 </html>
