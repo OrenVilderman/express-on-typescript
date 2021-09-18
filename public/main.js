@@ -3,11 +3,11 @@ function setUUID() {
     document.getElementById('getAction').action = `/api/V0.1/${uuid}`
 }
 
-function setPOST() {
+async function setPOST() {
     const id = document.getElementById('postID').value;
     const name = document.getElementById('postName').value;
     const uuid = document.getElementById('postUUID').value;
-    fetch('/api/V0.1/', {
+    let response = await fetch('/api/V0.1/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -17,14 +17,28 @@ function setPOST() {
             name: name,
             uuid: uuid
         }),
-    })
+    }).then((res) => res.text());
+
+    let el;
+    try {
+        response = JSON.parse(response)
+        response = response[response.length - 1]
+        el = document.getElementById('results');
+    } catch (error) {
+        response = `Error: ${error.toString()}`;
+        el = document.getElementById('errors');
+    }
+    const linebreak = document.createElement('br');
+    el.appendChild(linebreak);
+    const node = document.createTextNode(JSON.stringify(response));
+    el.appendChild(node);
 }
 
-function setPatch() {
+async function setPatch() {
     const id = document.getElementById('patchID').value;
     const name = document.getElementById('patchName').value;
     const uuid = document.getElementById('patchUUID').value;
-    fetch(`/api/V0.1/${uuid}`, {
+    let response = await fetch(`/api/V0.1/${uuid}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -33,5 +47,17 @@ function setPatch() {
             id: id,
             name: name,
         }),
-    })
+    }).then((res) => res.text());
+    let el;
+    try {
+        response = JSON.parse(response)[0]
+        el = document.getElementById('results');
+    } catch (error) {
+        response = `Error: ${error.toString()}`;
+        el = document.getElementById('errors');
+    }
+    const linebreak = document.createElement('br');
+    el.appendChild(linebreak);
+    const node = document.createTextNode(JSON.stringify(response));
+    el.appendChild(node);
 }

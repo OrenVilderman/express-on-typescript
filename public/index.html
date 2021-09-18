@@ -18,7 +18,8 @@
             <label for="getBy">Send GET Empty or by UUID request</label>
             <input name="getBy" id="getBy" value="" placeholder="Enter UUID here">
         </div>
-        <button onclick="setUUID();">Send GET</button>
+        <div>
+            <button onclick="setUUID();">Send GET</button>
         </div>
     </form>
 
@@ -36,7 +37,8 @@
             <label for="postUUID">Set the POST request UUID</label>
             <input name="postUUID" id="postUUID" value="" placeholder="Enter UUID here">
         </div>
-        <input type='button' onclick="setPOST();" value="Send POST"></input>
+        <div>
+            <input type='button' onclick="setPOST();" value="Send POST"></input>
         </div>
     </form>
 
@@ -54,10 +56,15 @@
             <label for="patchUUID">Set the PATCH request UUID</label>
             <input name="patchUUID" id="patchUUID" value="" placeholder="Enter UUID here">
         </div>
-        
-        <input type='button' onclick="setPatch();" value="Send PATCH"></input>
+        <div>
+            <input type='button' onclick="setPatch();" value="Send PATCH"></input>
         </div>
     </form>
+
+    <div id=results></div>
+    <div id=errors></div>
+
     <script rel="scriptSheet" src="main.js" type="application/javaScript"></script>
 </body>
+
 </html>
