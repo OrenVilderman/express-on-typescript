@@ -7,7 +7,7 @@ async function setPOST() {
     const id = document.getElementById('postID').value;
     const name = document.getElementById('postName').value;
     const uuid = document.getElementById('postUUID').value;
-    let response = await fetch('/api/V0.1/', {
+    await fetch('/api/V0.1/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -17,16 +17,14 @@ async function setPOST() {
             name: name,
             uuid: uuid
         }),
-    }).then((res) => res.text());
-
-    addResponseToNode(response);
+    }).then(async (res) => addResponseToNode(await res.text()));
 }
 
 async function setPatch() {
     const id = document.getElementById('patchID').value;
     const name = document.getElementById('patchName').value;
     const uuid = document.getElementById('patchUUID').value;
-    let response = await fetch(`/api/V0.1/${uuid}`, {
+    await fetch(`/api/V0.1/${uuid}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -35,9 +33,7 @@ async function setPatch() {
             id: id,
             name: name,
         }),
-    }).then((res) => res.text());
-
-    addResponseToNode(response);
+    }).then(async (res) => addResponseToNode(await res.text()));
 }
 
 function addResponseToNode(response) {
