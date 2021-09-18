@@ -19,19 +19,7 @@ async function setPOST() {
         }),
     }).then((res) => res.text());
 
-    let el;
-    try {
-        response = JSON.parse(response)
-        response = response[response.length - 1]
-        el = document.getElementById('results');
-    } catch (error) {
-        response = `Error: ${error.toString()}`;
-        el = document.getElementById('errors');
-    }
-    const linebreak = document.createElement('br');
-    el.appendChild(linebreak);
-    const node = document.createTextNode(JSON.stringify(response));
-    el.appendChild(node);
+    addResponseToNode(response);
 }
 
 async function setPatch() {
@@ -48,9 +36,15 @@ async function setPatch() {
             name: name,
         }),
     }).then((res) => res.text());
+
+    addResponseToNode(response);
+}
+
+function addResponseToNode(response) {
     let el;
     try {
-        response = JSON.parse(response)[0]
+        response = JSON.parse(response)
+        response = response[response.length > 1 ? response.length - 1 : 0]
         el = document.getElementById('results');
     } catch (error) {
         response = `Error: ${error.toString()}`;
